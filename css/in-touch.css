@@ -110,9 +110,10 @@ input::placeholder{
     margin-bottom: 17px;
 }
 
-.words > * {
+.words > p {
     margin: 0;
     color:#e0e0e0;
+    height: 117px;
   }
 
   .loc, .down,.mail{
