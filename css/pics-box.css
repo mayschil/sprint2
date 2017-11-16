@@ -1,0 +1,13 @@
+.pictures{
+    height: 720px;
+    width: 820px;
+    border-left: 1px solid #ebeff0;
+    border-right: 1px solid #ebeff0;
+}
+
+.pics{
+
+    margin: 30px;
+    display: flex;
+    justify-content: space-between
+}

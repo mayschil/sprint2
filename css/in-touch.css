@@ -1,0 +1,127 @@
+.in-touch{
+    background-color:#323232 ;
+    height:560px; 
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.intouch{
+    background-color: #323232;
+}
+.get-touch-head{
+    font-size: 22px;
+    color:#e0e0e0;
+    font-family: 'Maven Pro Regular';
+    margin: 0;
+}
+
+.get-touch-guide{
+    font-size: 18px;
+    color:#e0e0e0;
+    font-family: 'Maven Pro Regular';
+    margin: 0;
+}
+
+.client-details{
+    font-size: 12px;
+    color:#e0e0e0;
+}
+
+.text{
+    width: 578px;
+    height: 38px;
+    background-color: #454545;
+    border:none;
+    color:#e0e0e0;
+}
+
+.msg{
+    width: 578px;
+    height: 150px; 
+    background-color: #454545;
+    border:none;
+    color:#e0e0e0;    
+}
+
+.client-details{
+    height: 365px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;    
+    margin-top: 17px;
+}
+
+.btn-send{
+    width:90px;
+    height: 37px; 
+    background-color:#2eb398;
+    font-size: 12px;
+    color:#e0e0e0;
+}
+
+input::placeholder{
+    color:#e0e0e0;
+    padding-left: 11px;
+}
+
+/* .left-box{
+    margin-left: 20px;
+} */
+
+.right-box{
+    font-size: 12px;
+    height: 220px;
+    margin-top: -73px;
+}
+
+.words {
+    width:180px;
+    height:117px;
+    color:#e0e0e0;
+    margin: 0;
+}
+
+.communication{
+    width:121px;
+    height:54px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.address > p{
+    margin: 0;
+    color:#e0e0e0;
+} 
+.phone-num > p{
+    margin: 0;
+    color:#e0e0e0;
+} 
+.mail > p{
+    margin: 0;
+    color:#e0e0e0;
+} 
+
+.headline-touch{
+    margin-bottom: 17px;
+}
+
+.words > * {
+    margin: 0;
+    color:#e0e0e0;
+  }
+
+  .loc, .down,.mail{
+      width: 7px;
+      height: 11px;
+  }
+
+  .address, .phone-num, .email{
+      width: 152px;
+      display: flex;
+      justify-content: space-between;
+  }
