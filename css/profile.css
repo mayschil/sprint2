@@ -10,6 +10,8 @@
 }
 .illus-prof{
     background-color:#2eb398;
+    display: flex;
+    align-items: flex-end;
 }
 
 .profile-box{
@@ -48,4 +50,9 @@
     font-size: 12px;
     color:#d7fcf5;
     margin: 0;
+    height: 85px;
+}
+
+.social{
+width: 163px;
 }
