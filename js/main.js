@@ -1,4 +1,4 @@
-'using strict'
+'use strict'
 
 //scroll functions
 function scrollProtfolio() {
@@ -22,8 +22,11 @@ var gKeyWords = ['baby,scary,not-happy', 'baby,strong,success', 'girl,disaster',
 var gImgs = [];
 getImgs();
 var gKeyAppear = {};
+<<<<<<< HEAD
 var gKeySorted=[];
 keyCount();
+=======
+>>>>>>> 5c3f5e438752eec88578ea44437a98781b1ab1f0
 
 function getImgs() {
 
