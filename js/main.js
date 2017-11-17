@@ -22,11 +22,9 @@ var gKeyWords = ['baby,scary,not-happy', 'baby,strong,success', 'girl,disaster',
 var gImgs = [];
 getImgs();
 var gKeyAppear = {};
-<<<<<<< HEAD
 var gKeySorted=[];
 keyCount();
-=======
->>>>>>> 5c3f5e438752eec88578ea44437a98781b1ab1f0
+
 
 function getImgs() {
 
@@ -41,6 +39,7 @@ function getImgs() {
 
 function keyCount() {
 
+    var keys=[];
     gPics.forEach(function (pic, idx) {
         keys = gKeyWords[idx].split(',');
         keys.forEach(function (key) {
@@ -108,9 +107,6 @@ function showImgByKey() {
     renderImgs(isImgs);
 }
 
-
-
-
 function showList() {
     cleanBoard();
     sortKeys();
@@ -138,9 +134,8 @@ function sortKeys() {
     }
     
     gKeySorted = keys.sort(function(a, b) {
-        return a[1] - b[1];
+        return b[1] - a[1];
     });
-    
 }
 
 
