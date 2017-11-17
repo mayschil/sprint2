@@ -40,12 +40,15 @@
     font-size: 30px;
     color:#d7fcf5;
     margin: 0;
+    font-family: 'Maven Pro';
 }
 
 .illus-job{
     font-size: 18px;
     color:#289b84;
     margin: 0;
+    font-family: 'Maven Pro';
+    
 }
 
 .about-illus{

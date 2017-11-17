@@ -13,14 +13,14 @@
 .get-touch-head{
     font-size: 22px;
     color:#e0e0e0;
-    font-family: 'Maven Pro Regular';
+    font-family: 'Maven Pro';
     margin: 0;
 }
 
 .get-touch-guide{
     font-size: 18px;
     color:#e0e0e0;
-    font-family: 'Maven Pro Regular';
+    font-family: 'Maven Pro';
     margin: 0;
 }
 
@@ -60,6 +60,7 @@
     background-color:#2eb398;
     font-size: 12px;
     color:#e0e0e0;
+    border: none;
 }
 
 input::placeholder{

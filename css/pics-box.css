@@ -5,9 +5,13 @@
     border-right: 1px solid #ebeff0;
 }
 
-.pics{
-
+.imgs{
     margin: 30px;
     display: flex;
     justify-content: space-between
+}
+
+.imgs *{
+    width: 150px;
+    height: 150px;;
 }

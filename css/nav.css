@@ -33,6 +33,7 @@ ul{
 
 li:hover{
     color: #36B297; 
+    cursor:default;
 }
 
 li{
