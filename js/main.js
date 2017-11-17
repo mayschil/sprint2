@@ -17,35 +17,37 @@ function scrollGetTouch() {
 
 //render pictures
 var gPics = ['child.jpg', 'baby.jpg', 'girl.jpg', 'woman.jpg', 'man.jpg', 'wanka.jpg', 'american.jpg', 'red.jpg'];
-var gKeyWords = ['child,scary,not-happy', 'baby,strong,success', 'girl,disaster',
-    'woman,crazy', 'man,excuse', 'willy wonka,laugh', 'american,comedy', 'man,extravagant,dont-care'];
+var gKeyWords = ['baby,scary,not-happy', 'baby,strong,success', 'girl,disaster',
+    'woman,crazy', 'man,excuse', 'willy-wonka,laugh', 'american,comedy', 'man,extravagant,dont-care'];
 var gImgs = [];
 getImgs();
 var gKeyAppear = {};
-
+var gKeySorted=[];
+keyCount();
 
 function getImgs() {
-    
+
     var keys = [];
 
     gPics.forEach(function (pic, idx) {
         keys = gKeyWords[idx].split(',');
-        
-        keys.forEach(function (key) {
-            console.log(key)
-            getKeyAppear(key);     
-        });
         gImgs.push(getImg(pic, idx, keys));
     });
-
-
     renderImgs(gImgs);
 }
 
-function getKeyAppear(key){
+function keyCount() {
 
-    gKeyAppear[key]=0;
-    
+    gPics.forEach(function (pic, idx) {
+        keys = gKeyWords[idx].split(',');
+        keys.forEach(function (key) {
+            if (gKeyAppear[key] === undefined)
+                gKeyAppear[key] = 1;
+
+            else
+                gKeyAppear[key] += 1;
+        });
+    });
 }
 
 function getImg(pic, idx, keys) {
@@ -108,19 +110,35 @@ function showImgByKey() {
 
 function showList() {
     cleanBoard();
-
+    sortKeys();
+   
+    var keyBoard = {};
     var fontSizeBasic = 12;
     var elClass = document.querySelector('.imgs');
 
-    // for (var i = 0; i < gImgs.length; i++) {
-    //    if(gImgs[i].keywords)
+    var strHtmls = '';
 
-    // }
+    for (var key in gKeyAppear) {
+        var strHtml =
+            ' <p> ' + key + '   ' + gKeyAppear[key] + ' </p>';
 
-
+        strHtmls += strHtml
+    }
+    elClass.innerHTML = strHtmls;
 }
 
+function sortKeys() {
 
+    var keys = [];
+    for (var key in gKeyAppear) {
+        keys.push([key, gKeyAppear[key]]);
+    }
+    
+    gKeySorted = keys.sort(function(a, b) {
+        return a[1] - b[1];
+    });
+    
+}
 
 
 
