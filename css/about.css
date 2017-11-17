@@ -1,6 +1,7 @@
 .about-div{
 background-color:#F1F062 ;
 height: 200px;
+padding-top: 20px;
 }
 
 .about{
@@ -12,6 +13,7 @@ border-right: 1px solid #ebeff0;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
+
 }
 
 
