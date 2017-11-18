@@ -1,14 +1,7 @@
 
-.display-keys{
-    display: block;
-    width: 720px;
-    display: flex;
-    flex-wrap: wrap; 
-}
 
-
-.display-keys p:hover
-{cursor:pointer;
+.display-keys p:hover{
+    cursor:pointer;
 }
 
 

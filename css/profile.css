@@ -67,3 +67,14 @@ height: 27px;
 display: flex;
 align-self: flex-end;
 }
+
+.go-top2{
+    margin-top: -38px;
+    width:100px;
+    height: 23px;
+
+}
+
+.go-top2 a{
+    color:#454545;
+}

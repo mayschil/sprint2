@@ -123,3 +123,16 @@ input::placeholder{
       display: flex;
       justify-content: space-between;
   }
+
+
+  .go-top3 a{
+    color:#454545;
+}
+
+.go-top3 {
+    color:#454545;
+    width:100px;
+    height: 23px;
+    margin-left: 400px;
+    margin-bottom: 50px;
+}
