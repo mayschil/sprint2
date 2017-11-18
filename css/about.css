@@ -12,7 +12,8 @@ border-left: 1px solid #ebeff0;
 border-right: 1px solid #ebeff0;
 display: flex;
 flex-direction: column;
-justify-content: space-around;
+align-items: center;
+
 
 }
 
@@ -25,4 +26,8 @@ justify-content: space-around;
 
 .about-details{
     font-size: 12px;
+}
+
+.about-frame{
+    width:780px;
 }

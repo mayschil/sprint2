@@ -19,11 +19,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center; 
-    /* margin: 0; */
+    justify-content: space-around;
 }
 
 ul{
-    width: 430px;
+    width: 371px;
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
@@ -62,12 +62,3 @@ li{
 .rec{
     margin-top: 26px;
 }
-
-/* ul :first-child{
-    margin-right: 26px;
-}
-
-
-ul :last-child{
-    margin-left: 26px;
-} */
