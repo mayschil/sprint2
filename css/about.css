@@ -33,11 +33,13 @@ align-items: center;
 }
 
 .go-top1 a{
-    color:#454545;
+    color:#ebeff0;
 }
 
 .go-top1{
+    border: none;
     margin-top: 10px;
     width:100px;
     height: 23px;
+    background-color:#454545;
 }

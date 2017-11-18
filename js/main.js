@@ -3,7 +3,7 @@
 //render pictures
 var gPics = ['child.jpg', 'baby.jpg', 'girl.jpg', 'woman.jpg', 'man.jpg', 'wanka.jpg', 'american.jpg',
     'red.jpg', 'white-man.jpg', 'dude.jpg', 'de-evil.jpg', 'trump.jpg'];
-var gKeyWords = ['baby,man,not-happy', 'baby,strong,success', 'girl,disaster',
+var gKeyWords = ['baby,man,not-happy', 'babi,strong,success', 'girl,disaster',
     'woman,crazy', 'baby,excuse', 'willy-wonka,baby', 'american,baby', 'man,extravagant,dont-care',
     'scary', 'crzay', 'movie', 'president'];
 var gImgs = [];
@@ -167,46 +167,51 @@ function sortKeys() {
 
 function myFunction() {
 
-    var tempWords = '';
+    var arr=[];
+    var letters = [];
     var str = document.querySelector('.img-key').value;
     console.log('str', str)
     gLetters = str.split('');
     console.log('gLetters', gLetters)
+    var imgs = [];
 
-    var arr = ['may', 'mat'];
-
-    for (var i = 0; i < arr.length; i++) {
-        var word = arr[i].split('');
-        for (var k = 0; k < gLetters.length; k++) {
-            if (gLetters[k] === word[k]) {
-                tempWords += gLetters[k];
-            }
-
-            else {
-                console.log('this is not the word');
-                break;
+    for (var j = 0; j < gImgs.length; j++) {
+        for (var i = 0; i < gImgs[j].keywords.length; i++) {
+            var word = gImgs[j].keywords[i].split('');
+            console.log('word', word)
+            for (var k = 0; k < gLetters.length; k++) {
+                if (gLetters[k] === word[k]) {
+                    // if (!letters[k]) {
+                    letters.push(gLetters[k]);
+                    // }
+                    imgs.push(word);
+                //   arr = checkImgs(imgs);
+                //   console.log('arr',arr)
+                }
+                else {
+                    break;
+                }
             }
         }
     }
-    console.log('tempWords', tempWords);
-
-    // for (var i = 0; i < gImgs.length; i++) {
-    //     for (var j = 0; j < gImgs[i].keywords.length; j++) {
-    //         keys = gImgs[i].keywords[j].split('');
-    //         for (var k = 0; k < gLetters.length; k++) {
-    //             if (gLetters[k] === keys[k]) {
-    //                 tempWords += gLetters[k];
-    //                 console.log('tempWords', tempWords);
-    //                 k++;
-    //             }
-    //             else break;
-    //         }
-    //     }
-    // }
-    // gLetters = [];
+    console.log('letters', letters);
+    console.log('imgs', imgs);
 }
 
 
+function checkImgs(imgs) {
+
+    var keys = [];
+    var str;
+    for (var i = 0; i < imgs.length; i++) {
+        str = '';
+        for (var j = 0; j < imgs[i].length; j++) {
+            str += imgs[j];
+        }
+        keys.push(str);
+    }
+    return keys;
+}
 
 
 

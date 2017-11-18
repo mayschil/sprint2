@@ -72,7 +72,8 @@ align-self: flex-end;
     margin-top: -38px;
     width:100px;
     height: 23px;
-
+    background-color:#F1F062 ;
+border:none;
 }
 
 .go-top2 a{
