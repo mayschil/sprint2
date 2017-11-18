@@ -68,10 +68,6 @@ input::placeholder{
     padding-left: 11px;
 }
 
-/* .left-box{
-    margin-left: 20px;
-} */
-
 .right-box{
     font-size: 12px;
     height: 220px;
@@ -94,15 +90,15 @@ input::placeholder{
     justify-content: space-between;
 }
 
-.address > p{
+.address {
     margin: 0;
     color:#e0e0e0;
 } 
-.phone-num > p{
+.phone-num {
     margin: 0;
     color:#e0e0e0;
 } 
-.mail > p{
+.email{
     margin: 0;
     color:#e0e0e0;
 } 

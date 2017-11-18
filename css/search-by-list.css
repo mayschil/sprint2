@@ -1,25 +1,67 @@
 
 .display-keys{
     display: block;
-    height: 500px;
     width: 720px;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
+
+
+.display-keys p:hover
+{cursor:pointer;
+}
+
+
 
 p.key-size1{
     font-size: 16px;
-    width:40px;
-    height:40px;
-    margin: 10px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;
+    /* margin: 10px; */
 }
 
 p.key-size2{
     font-size: 22px;
     width:100px;
-    height:100px;
-    margin: 10px;
-    
+    height:50px;
+    margin:0;
+    text-align: center;    
+    /* margin: 10px;   */
 }
 
+p.key-size3{
+    font-size: 26px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;    
+    /* margin: 10px; */
+}
+
+p.key-size4{
+    font-size: 30px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;    
+    /* margin: 10px;   */
+}
+p.key-size5{
+    font-size: 34px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;    
+    /* margin: 10px; */
+}
+
+p.key-size6{
+    font-size: 38px;
+    width:100px;
+    height:50px;
+    margin:0;
+    text-align: center;    
+    /* margin: 10px;   */
+}

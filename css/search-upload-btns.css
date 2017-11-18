@@ -60,18 +60,21 @@
 
 
 .display-keys{
+    color:#323232;
     display: block;
     height: 500px;
     width: 720px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: end; 
 }
 
 .added-pic{
     
     height: 50px;
     width: 72px;
+    margin-top: 120px;
+    margin-left: -472px;
 }
 
 .img-url{
