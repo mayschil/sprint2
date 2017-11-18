@@ -1,0 +1,27 @@
+
+.display-keys{
+    display: block;
+    height: 500px;
+    width: 720px;
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+    flex-wrap: wrap;
+}
+
+p.key-size1{
+    font-size: 16px;
+    width:40px;
+    height:40px;
+    margin: 10px;
+}
+
+p.key-size2{
+    font-size: 22px;
+    width:100px;
+    height:100px;
+    margin: 10px;
+    
+}
+

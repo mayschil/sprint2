@@ -31,14 +31,28 @@ ul{
     padding: 0;
 }
 
-li:hover{
+a:hover{
     color: #36B297; 
     cursor:default;
+}
+
+a{
+    text-decoration: none;
+    color:#f1f1f1;
+}
+
+.right-bar , .left-bar{
+    width: 114px;
+    height:8px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
 }
 
 li{
     list-style: none;
 }
+
 
 .img-nav{
     width: 64px;;
@@ -49,18 +63,11 @@ li{
     margin-top: 26px;
 }
 
-ul :first-child{
+/* ul :first-child{
     margin-right: 26px;
 }
 
-/* ul :nth-child(2){
-    margin-right: 20px;
-}
-
-ul :nth-child(4){
-    margin-left: 20px;
-} */
 
 ul :last-child{
     margin-left: 26px;
-}
+} */

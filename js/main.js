@@ -1,20 +1,5 @@
 'use strict'
 
-//scroll functions
-function scrollProtfolio() {
-    window.scrollTo(0, 950);
-}
-
-function scrollAbout() {
-    window.scrollTo(0, 600);
-}
-
-function scrollGetTouch() {
-    window.scrollTo(0, 1257);
-}
-
-
-
 //render pictures
 var gPics = ['child.jpg', 'baby.jpg', 'girl.jpg', 'woman.jpg', 'man.jpg', 'wanka.jpg', 'american.jpg', 'red.jpg'];
 var gKeyWords = ['baby,scary,not-happy', 'baby,strong,success', 'girl,disaster',
@@ -22,7 +7,7 @@ var gKeyWords = ['baby,scary,not-happy', 'baby,strong,success', 'girl,disaster',
 var gImgs = [];
 getImgs();
 var gKeyAppear = {};
-var gKeySorted=[];
+var gKeySorted = [];
 keyCount();
 
 
@@ -39,7 +24,7 @@ function getImgs() {
 
 function keyCount() {
 
-    var keys=[];
+    var keys = [];
     gPics.forEach(function (pic, idx) {
         keys = gKeyWords[idx].split(',');
         keys.forEach(function (key) {
@@ -68,7 +53,7 @@ function renderImgs(imgs) {
 
     imgs.forEach(function (img, idx) {
         var strHtml = `
-        <div class="hexa-shape"><img  src="img/${img.url}"  id="i-${idx}" onclick="makeMeme(this)" ></div>
+        <div><img  src="img/${img.url}"  id="i-${idx}" onclick="makeMeme(this)" ></div>
         `
         strHtmls += strHtml
     });
@@ -95,7 +80,7 @@ function showImgByKey() {
     cleanBoard();
     var isImgs = [];
 
-    var keyValue = document.querySelector('.img-key').value;
+    var keyValue = document.querySelector('.display-keys').value;
 
     gImgs.forEach(function (img) {
         img.keywords.forEach(function (key) {
@@ -110,21 +95,19 @@ function showImgByKey() {
 function showList() {
     cleanBoard();
     sortKeys();
-   
-    var keyBoard = {};
-    var fontSizeBasic = 12;
-    var elClass = document.querySelector('.imgs');
 
+    var elClass = document.querySelector('.display-keys');
     var strHtmls = '';
 
-    for (var key in gKeyAppear) {
+    gKeySorted.forEach(function(key) {
         var strHtml =
-            ' <p> ' + key + '   ' + gKeyAppear[key] + ' </p>';
-
+            ' <p class="key-size'+key[1]+'"> ' + key[0] + ' </p>';
         strHtmls += strHtml
-    }
+    });
     elClass.innerHTML = strHtmls;
 }
+
+
 
 function sortKeys() {
 
@@ -132,9 +115,11 @@ function sortKeys() {
     for (var key in gKeyAppear) {
         keys.push([key, gKeyAppear[key]]);
     }
-    
-    gKeySorted = keys.sort(function(a, b) {
+    gKeySorted = keys.sort(function (a, b) {
         return b[1] - a[1];
+    });
+
+    gKeySorted.forEach(function (key) {
     });
 }
 
@@ -143,7 +128,6 @@ function sortKeys() {
 
 
 
-
-function makeMeme(elImg) {
-    console.log(elImg);
-}
+    function makeMeme(elImg) {
+        console.log(elImg);
+    }
