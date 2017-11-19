@@ -9,21 +9,27 @@ body{
     flex-wrap: wrap;
 }
 
-
 .mobile-icon{
     display: none;
     font-size: 50px;
 }
 
-.logo{
+#phone-menu{
     display: none;
 }
 
+.logo{
+    display: none;
+}
 .mobile-menu{
     width:100%;    
     display: flex;
     justify-content: inherit; 
 }
+
+/* .nav-phone{
+    display: none;
+} */
 
 .header{
     background-color: #323232;

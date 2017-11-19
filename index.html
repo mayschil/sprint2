@@ -14,11 +14,13 @@
 <body>
     <div class="header">
         <div class="container nav-bar" id="top">
-            <label for="phone-menu" class="mobile-icon">&#9776;</label>
-            <input type="checkbox" id="phone-menu" style="display:none">
-            <div class="logo" onclick=" location.reload()">
-                <img src="img/slice-2.png">  
-            </div>
+            <!-- <div class="nav-phone"> -->
+                <label for="phone-menu" class="mobile-icon">&#9776;</label>
+                <input type="checkbox" id="phone-menu">
+                <!-- <div class="logo">
+                    <img src="img/slice-7.png">
+                </div> -->
+            <!-- </div> -->
             <div class="mobile-menu">
                 <ul>
                     <div class="left-bar">
@@ -34,10 +36,8 @@
                         <li><a href="#blog"> BLOG </a></li>
                         <li><a href="#get-in-touch"> GET IN TOUCH </a></li>
                     </div>
-
-
-                </ul>
             </div>
+            </ul>
 
 
 
@@ -74,8 +74,8 @@
             </div> -->
 
             <div class="add-img">
-                <input class="img-url" type="file" name="img">
                 <button class="btn-add-img" onclick="addImg()">Upload</button>
+                <input class="img-url" type="file" name="img">
                 <img src="" class="added-pic" style="display:none">
             </div>
         </div>

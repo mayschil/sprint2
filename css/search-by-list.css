@@ -8,19 +8,21 @@
 
 p.key-size1{
     font-size: 16px;
-    width:100px;
-    height:50px;
+    width:85px;
+    height:40px;
     margin:0;
     text-align: center;
+    color: #948F8F;
     /* margin: 10px; */
 }
 
 p.key-size2{
     font-size: 22px;
-    width:100px;
-    height:50px;
+    width:135px;
+    height:40px;
     margin:0;
-    text-align: center;    
+    text-align: center;  
+    color:#817D7D;  
     /* margin: 10px;   */
 }
 
@@ -29,7 +31,8 @@ p.key-size3{
     width:100px;
     height:50px;
     margin:0;
-    text-align: center;    
+    text-align: center;   
+    color:#625F5F; 
     /* margin: 10px; */
 }
 
@@ -38,7 +41,8 @@ p.key-size4{
     width:100px;
     height:50px;
     margin:0;
-    text-align: center;    
+    text-align: center;   
+    color:#3E3A3A 
     /* margin: 10px;   */
 }
 p.key-size5{
@@ -46,7 +50,8 @@ p.key-size5{
     width:100px;
     height:50px;
     margin:0;
-    text-align: center;    
+    text-align: center;  
+    color: #211F1F  
     /* margin: 10px; */
 }
 
@@ -55,6 +60,7 @@ p.key-size6{
     width:100px;
     height:50px;
     margin:0;
-    text-align: center;    
+    text-align: center;  
+    color: #1E1C1C;  
     /* margin: 10px;   */
 }

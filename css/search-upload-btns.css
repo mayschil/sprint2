@@ -21,10 +21,10 @@
     margin-top: 50px;
     margin-left: 48px;
     height:27px;
-    width:380px;
+    width:220px;
     margin:5px;
     display: flex;
-    
+    padding: 0;
 }
 
 .btn-add-img{
@@ -60,6 +60,8 @@
     flex-wrap: wrap;
     align-items: center;
     margin-top: 50px;
+    justify-content: center;
+    
 }
 
 .added-pic{
@@ -71,9 +73,14 @@
 }
 
 .img-url{
-    width:209px;
+    width:100px;
     margin-left: 5px;
+    color:transparent;
+    border: none;
 }
 
-
+.img-url input[type=file] {
+    display:none;
+    margin:10px;
+    }
 

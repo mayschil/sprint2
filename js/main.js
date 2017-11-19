@@ -4,9 +4,9 @@
 // CR: gImgs = [{url:}]
 var gPics = ['child.jpg', 'baby.jpg', 'girl.jpg', 'woman.jpg', 'man.jpg', 'wanka.jpg', 'american.jpg',
     'red.jpg', 'white-man.jpg', 'dude.jpg', 'de-evil.jpg', 'trump.jpg'];
-var gKeyWords = ['baby,man,not-happy', 'babi,strong,success', 'girl,disaster',
-    'woman,crazy', 'baby,excuse', 'willy-wonka,baby', 'american,baby', 'man,extravagant,dont-care,woman',
-    'weird,ugly', 'crzay,scary,man', 'movie,funny,fun', 'president,stupid,man,child,success'];
+var gKeyWords = ['Baby,Man,Not-happy', 'Baby,Strong,Success', 'Girl,Disaster',
+    'Woman,Crazy', 'Baby,Excuse', 'Willy-Wonka,Baby,American', 'American,Baby', 'Man,Extravagant,Dont-care,Woman',
+    'Weird,Ugly', 'Crzay,Scary,Man', 'Movie,American,Man', 'American,Stupid,Man,Child,Success'];
 
     var gImgs = [];
 getImgs();
