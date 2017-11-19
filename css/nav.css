@@ -15,6 +15,10 @@ body{
     font-size: 50px;
 }
 
+.logo{
+    display: none;
+}
+
 .mobile-menu{
     width:100%;    
     display: flex;

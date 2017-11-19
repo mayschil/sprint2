@@ -1,14 +1,14 @@
 
 
-@media screen and (max-width: 778px) {
+@media screen and (max-width: 790px) {
 
     .illus-pic {
         height: 172px;
     }
 
-    .right-box{
+    /* .right-box{
         width:165px;
-    }
+    } */
     .buttons{
         display: flex;
         flex-direction: column;
@@ -36,7 +36,7 @@
 
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 736px) {
     
     .pictures{
         margin-bottom: -41px;
@@ -46,9 +46,9 @@
         height: 107px;
     }
 
-    .right-box{
+    /* .right-box{
         width:165px;
-    }
+    } */
     .illus-prof {
         align-items: center;
         height: 234px;
@@ -185,9 +185,16 @@
 
     @media screen and (max-width:516px) {
     
+        .nav-bar{
+            display: inline;
+            display: flex;
+            justify-content: space-between;
+        }
+
         .rec{
             display: none;
         }
+        
         .mobile-icon{
             display: block;
             color:#c2c2c2;
@@ -195,12 +202,9 @@
         } 
 
         .logo{
-            height:75px;
-        }
-
-
-        .nav-bar{
-            display: inline;
+            display: block;
+            height: 53px;
+            margin-right: 4px;
         }
 
         ul{
@@ -254,10 +258,10 @@
             height: 260px;
         }
 
-        .in-touch {
+        /* .in-touch {
             height: 574px;
             
-        }
+        } */
 
         .illus-prof {
             
@@ -282,11 +286,18 @@
         .details{
         margin: 10px;
         height:220px;
+        display: flex;
+        justify-content: space-between;
+        
         }
 
         .left-box {
         width: 89%;
         }   
+
+        .display-keys{
+            justify-content: center;            
+        }
 } 
 
 

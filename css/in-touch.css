@@ -2,8 +2,9 @@
     background-color:#323232 ;
     height:560px;     
     display: flex;
-    justify-content: center;
     justify-content: space-around;
+    
+
     align-items: center;
 }
 
@@ -30,7 +31,7 @@
 }
 
 .text{
-    width: 578px;
+    width: 100%;
     height: 38px;
     background-color: #454545;
     border:none;
@@ -38,7 +39,7 @@
 }
 
 .msg{
-    width: 578px;
+    width: 100%;
     height: 150px; 
     background-color: #454545;
     border:none;
@@ -70,8 +71,12 @@ input::placeholder{
 
 .right-box{
     font-size: 12px;
-    height: 220px;
+
     margin-top: -73px;
+}
+
+.left-box{
+    width: 578px;    
 }
 
 .words {
