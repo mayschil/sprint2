@@ -4,10 +4,11 @@
     height: 320px;
     border-left: 1px solid #e4e9eb;
     border-right: 1px solid #e4e9eb;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: center;
-    
+    align-items: center;
+    justify-content: space-around;
 
 }
 
@@ -21,7 +22,7 @@
 .profile-box{
     margin-top: 45px;
     height: 340px;
-    width: 820px;
+    /* width: 820px; */
     display: flex;
     align-content: center;
     justify-content: space-around;

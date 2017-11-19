@@ -1,6 +1,6 @@
 .in-touch{
     background-color:#323232 ;
-    height:560px; 
+    height:560px;     
     display: flex;
     justify-content: center;
     justify-content: space-around;
@@ -111,6 +111,7 @@ input::placeholder{
     margin: 0;
     color:#e0e0e0;
     height: 117px;
+    line-height: 15px;
   }
 
   .loc, .down,.mail{

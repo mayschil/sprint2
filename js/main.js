@@ -1,12 +1,14 @@
 'use strict'
 
 //render pictures
+// CR: gImgs = [{url:}]
 var gPics = ['child.jpg', 'baby.jpg', 'girl.jpg', 'woman.jpg', 'man.jpg', 'wanka.jpg', 'american.jpg',
     'red.jpg', 'white-man.jpg', 'dude.jpg', 'de-evil.jpg', 'trump.jpg'];
 var gKeyWords = ['baby,man,not-happy', 'babi,strong,success', 'girl,disaster',
-    'woman,crazy', 'baby,excuse', 'willy-wonka,baby', 'american,baby', 'man,extravagant,dont-care',
-    'scary', 'crzay', 'movie', 'president'];
-var gImgs = [];
+    'woman,crazy', 'baby,excuse', 'willy-wonka,baby', 'american,baby', 'man,extravagant,dont-care,woman',
+    'weird,ugly', 'crzay,scary,man', 'movie,funny,fun', 'president,stupid,man,child,success'];
+
+    var gImgs = [];
 getImgs();
 var gKeyAppear = {};
 var gKeySorted = [];
@@ -32,11 +34,13 @@ function keyCount() {
     gPics.forEach(function (pic, idx) {
         keys = gKeyWords[idx].split(',');
         keys.forEach(function (key) {
-            if (gKeyAppear[key] === undefined)
+            // if (!gKeyApper[key] ) gKeyAppear[key] = 1;
+            // else... 
+            if (gKeyAppear[key] === undefined){
                 gKeyAppear[key] = 1;
-
-            else
+            } else {
                 gKeyAppear[key] += 1;
+            }
         });
     });
 }
@@ -57,7 +61,7 @@ function renderImgs(imgs) {
 
     imgs.forEach(function (img, idx) {
         var strHtml = `
-        <div><img  src="img/${img.url}"  id="i-${idx}" onclick="makeMeme(this)" ></div>
+        <div class="img-size"><img  src="img/${img.url}" onclick="makeMeme(this)" ></div>
         `
         strHtmls += strHtml
     });
@@ -70,9 +74,9 @@ function cleanBoard() {
     document.querySelector('.display-keys').style.height = 'initial';
     document.querySelector('.display-keys').style.margin = '0';
     document.querySelector('.display-keys').innerHTML = '';
-    var img = document.querySelector('.added-pic');
-    img.style.display = 'none';
-    renderImgs(gImgs);
+    // var img = document.querySelector('.added-pic');
+    // img.style.display = 'none';
+    // renderImgs(gImgs);
 }
 
 function addImg() {
@@ -100,33 +104,31 @@ function addImg() {
 
 
 
-function showImgByKey() {
+// function showImgByKey() {
 
-    cleanBoard();
-    var isImgs = [];
+//     cleanBoard();
+//     var isImgs = [];
 
-    var keyValue = document.querySelector('.img-key').value;
+//     var keyValue = document.querySelector('.img-key').value;
 
-    gImgs.forEach(function (img) {
-        img.keywords.forEach(function (key) {
-            if (keyValue === key)
-                isImgs.push(img);
-        });
-    });
+//     gImgs.forEach(function (img) {
+//         img.keywords.forEach(function (key) {
+//             if (keyValue === key)
+//                 isImgs.push(img);
+//         });
+//     });
 
-    renderImgs(isImgs);
-    document.querySelector('.img-key').value = '';
-}
+//     renderImgs(isImgs);
+//     document.querySelector('.img-key').value = '';
+// }
 
+showList();
 function showList() {
-    cleanBoard();
+    // cleanBoard();
     sortKeys();
 
     var elClass = document.querySelector('.display-keys');
     var strHtmls = '';
-
-    elClass.style.height = '1000px';
-    elClass.style.margin = '60px';
 
     gKeySorted.forEach(function (key) {
         var strHtml =
@@ -140,15 +142,15 @@ function goToPics(elKey) {
     console.log(elKey.innerHTML)
     var arr = [];
 
-    gImgs.forEach(function () {
-        gImgs.gKeyWords.forEach(function () {
-            if (gImgs.gKeyWords === elKey.innerText)
-                arr.push(gImgs[i]);
+    gImgs.forEach(function (img) {
+        img.keywords.forEach(function (key) {
+            if (key === elKey.innerText)
+                arr.push(img);
         });
     });
-
     cleanBoard();
     renderImgs(arr);
+    console.log('arr', arr)
 }
 
 function sortKeys() {
@@ -166,68 +168,89 @@ function sortKeys() {
 }
 
 var gCount = 0;
-var arr = [];
-var arr1 = [];
+var arrOfIdxs = [];
+var arrOfKeyWords = [];
 function myFunction() {
 
-
+    
     var letters = [];
     var imgs = [];
-    var temp = [];
     var str = document.querySelector('.img-key').value;
-
-    console.log('str', str)
+    if(!str) location.reload();
     gLetters = str.split('');
-    console.log('gLetters', gLetters)
-
-
+   
 
     if (!gCount) {
-        for (var j = 0; j < gImgs.length; j++) {
-            for (var i = 0; i < gImgs[j].keywords.length; i++) {
-                var letters = gImgs[j].keywords[i].split('');
-                if (str === letters[0]) {
-                    arr.push(j);
-                    arr1.push(gImgs[j].keywords[i]);
+        gImgs.forEach(function (img, idx) {
+            img.keywords.forEach(function (key) {
+                var letters = key.split('');
+                if (str === letters[0] && !arrOfIdxs.includes(idx) ) {
+
+                    arrOfIdxs.push(idx);
+                    arrOfKeyWords.push(key);
                 }
-            }
-        }
+            })
+        })
         gCount++;
-        console.log(arr);
-        // console.log(arr1);
-        for (var k = 0; k < arr.length; k++) {
-            var x = arr[k];
+        console.log(arrOfIdxs);
+        arrOfIdxs.forEach(function (index) {
+            var x = index;
             imgs.push(gImgs[x])
             renderImgs(imgs);
-        }
-
+        })
     }
     else {
-        for (var i = 0; i < arr.length; i++) {
-            var letters = arr1[i].split('');
+
+        arrOfKeyWords.forEach(function (word, idx) {
+            var letters = word.split('');
             if (gLetters[gCount] !== letters[gCount]) {
-                console.log('gLetters[gCount],letters[gCount]', gLetters[gCount], letters[gCount])
-                arr.splice(i, 1);
-                arr1.splice(i, 1);
-                arr.length = arr.length - 1;
+                arrOfIdxs[idx] = '';
+                arrOfKeyWords[idx] = '';
             }
-        }
-        console.log('arr', arr);
-        console.log('arr1', arr1);
-        for (var k = 0; k < arr.length; k++) {
-            var x = arr[k];
-            imgs.push(gImgs[x])
-            renderImgs(imgs);
-        }
+        })
+        arrOfIdxs.forEach(function (index) {
+            if (index !== '') {
+                // var x = arrOfIdxs[index];
+                imgs.push(gImgs[index])
+                console.log('imgs',imgs)
+                renderImgs(imgs);
+            }
+        })
         gCount++;
+
+        // for (var j = 0; j < gImgs.length; j++) {
+        //     for (var i = 0; i < gImgs[j].keywords.length; i++) {
+        //         var letters = gImgs[j].keywords[i].split('');
+        //         if (str === letters[0]) {
+        //             arr.push(j);
+        //             arr1.push(gImgs[j].keywords[i]);
+        //         }
+        //     }
+        // }
+       // for (var k = 0; k < arr.length; k++) {
+        //     var x = arr[k];
+        //     imgs.push(gImgs[x])
+        //     renderImgs(imgs);
+        // }
+        // for (var i = 0; i < arr.length; i++) {
+        //     var letters = arr1[i].split('');
+        //     if (gLetters[gCount] !== letters[gCount]) {
+        //         arr[i] = '';
+        //         arr1[i] = '';
+        //     }
+        // }
+        // for (var k = 0; k < arr.length; k++) {
+        //     if (arr[k] !== '') {
+        //         var x = arr[k];
+        //         imgs.push(gImgs[x])
+        //         renderImgs(imgs);
+        //     }
+        // }
+       
     }
 
 }
 
-
-function makeMeme(elImg) {
-    console.log(elImg);
-}
 
 
 

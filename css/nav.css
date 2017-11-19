@@ -5,6 +5,8 @@ body{
     margin: auto;
     max-width: 823px;
     width:100%; 
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
