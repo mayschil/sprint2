@@ -165,54 +165,64 @@ function sortKeys() {
     });
 }
 
+var gCount = 0;
+var arr = [];
+var arr1 = [];
 function myFunction() {
 
-    var arr=[];
+
     var letters = [];
+    var imgs = [];
+    var temp = [];
     var str = document.querySelector('.img-key').value;
+
     console.log('str', str)
     gLetters = str.split('');
     console.log('gLetters', gLetters)
-    var imgs = [];
 
-    for (var j = 0; j < gImgs.length; j++) {
-        for (var i = 0; i < gImgs[j].keywords.length; i++) {
-            var word = gImgs[j].keywords[i].split('');
-            console.log('word', word)
-            for (var k = 0; k < gLetters.length; k++) {
-                if (gLetters[k] === word[k]) {
-                    // if (!letters[k]) {
-                    letters.push(gLetters[k]);
-                    // }
-                    imgs.push(word);
-                //   arr = checkImgs(imgs);
-                //   console.log('arr',arr)
-                }
-                else {
-                    break;
+
+
+    if (!gCount) {
+        for (var j = 0; j < gImgs.length; j++) {
+            for (var i = 0; i < gImgs[j].keywords.length; i++) {
+                var letters = gImgs[j].keywords[i].split('');
+                if (str === letters[0]) {
+                    arr.push(j);
+                    arr1.push(gImgs[j].keywords[i]);
                 }
             }
         }
-    }
-    console.log('letters', letters);
-    console.log('imgs', imgs);
-}
-
-
-function checkImgs(imgs) {
-
-    var keys = [];
-    var str;
-    for (var i = 0; i < imgs.length; i++) {
-        str = '';
-        for (var j = 0; j < imgs[i].length; j++) {
-            str += imgs[j];
+        gCount++;
+        console.log(arr);
+        // console.log(arr1);
+        for (var k = 0; k < arr.length; k++) {
+            var x = arr[k];
+            imgs.push(gImgs[x])
+            renderImgs(imgs);
         }
-        keys.push(str);
-    }
-    return keys;
-}
 
+    }
+    else {
+        for (var i = 0; i < arr.length; i++) {
+            var letters = arr1[i].split('');
+            if (gLetters[gCount] !== letters[gCount]) {
+                console.log('gLetters[gCount],letters[gCount]', gLetters[gCount], letters[gCount])
+                arr.splice(i, 1);
+                arr1.splice(i, 1);
+                arr.length = arr.length - 1;
+            }
+        }
+        console.log('arr', arr);
+        console.log('arr1', arr1);
+        for (var k = 0; k < arr.length; k++) {
+            var x = arr[k];
+            imgs.push(gImgs[x])
+            renderImgs(imgs);
+        }
+        gCount++;
+    }
+
+}
 
 
 function makeMeme(elImg) {
