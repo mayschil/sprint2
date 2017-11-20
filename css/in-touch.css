@@ -3,8 +3,7 @@
     height:560px;     
     display: flex;
     justify-content: space-around;
-    
-
+    width:100%;
     align-items: center;
 }
 
@@ -70,25 +69,26 @@ input::placeholder{
 }
 
 .right-box{
-    font-size: 12px;
-
-    margin-top: -73px;
+  
+        width: 23%;
+        font-size: 12px;
+        margin-top: -138px;
 }
 
 .left-box{
-    width: 578px;    
+    width:70%;
 }
 
 .words {
-    width:180px;
-    height:117px;
+    /* width:180px; */
+    /* height:117px; */
     color:#e0e0e0;
     margin: 0;
 }
 
 .communication{
-    width:121px;
-    height:54px;
+    /* width:121px; */
+    /* height:54px; */
     margin: 0;
     display: flex;
     flex-direction: column;

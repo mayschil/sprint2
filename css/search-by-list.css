@@ -13,6 +13,7 @@ p.key-size1{
     margin:0;
     text-align: center;
     color: #948F8F;
+    /* text-transform:capitalize; */
     /* margin: 10px; */
 }
 
@@ -23,6 +24,7 @@ p.key-size2{
     margin:0;
     text-align: center;  
     color:#817D7D;  
+    /* text-transform:capitalize; */
     /* margin: 10px;   */
 }
 
@@ -33,6 +35,7 @@ p.key-size3{
     margin:0;
     text-align: center;   
     color:#625F5F; 
+    /* text-transform:capitalize; */
     /* margin: 10px; */
 }
 
@@ -42,7 +45,8 @@ p.key-size4{
     height:50px;
     margin:0;
     text-align: center;   
-    color:#3E3A3A 
+    color:#3E3A3A ;
+    /* text-transform:capitalize; */
     /* margin: 10px;   */
 }
 p.key-size5{
@@ -51,7 +55,8 @@ p.key-size5{
     height:50px;
     margin:0;
     text-align: center;  
-    color: #211F1F  
+    color: #211F1F  ;
+    /* text-transform:capitalize; */
     /* margin: 10px; */
 }
 
@@ -62,5 +67,6 @@ p.key-size6{
     margin:0;
     text-align: center;  
     color: #1E1C1C;  
+    /* text-transform:capitalize; */
     /* margin: 10px;   */
 }

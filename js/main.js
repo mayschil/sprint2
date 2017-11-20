@@ -4,17 +4,23 @@
 // CR: gImgs = [{url:}]
 var gPics = ['child.jpg', 'baby.jpg', 'girl.jpg', 'woman.jpg', 'man.jpg', 'wanka.jpg', 'american.jpg',
     'red.jpg', 'white-man.jpg', 'dude.jpg', 'de-evil.jpg', 'trump.jpg'];
-var gKeyWords = ['Baby,Man,Not-happy', 'Baby,Strong,Success', 'Girl,Disaster',
-    'Woman,Crazy', 'Baby,Excuse', 'Willy-Wonka,Baby,American', 'American,Baby', 'Man,Extravagant,Dont-care,Woman',
-    'Weird,Ugly', 'Crzay,Scary,Man', 'Movie,American,Man', 'American,Stupid,Man,Child,Success'];
+var gKeyWords = ['baby,man,not-happy', 'baby,strong,success', 'girl,disaster',
+    'woman,crazy', 'baby,excuse', 'willy-wonka,baby,american', 'american,baby', 'man,extravagant,dont-care,woman',
+    'weird,ugly', 'crzay,scary,man', 'movie,american,man', 'american,stupid,man,child,success'];
 
-    var gImgs = [];
-getImgs();
+var gImgs = [];
 var gKeyAppear = {};
 var gKeySorted = [];
 keyCount();
 var keys = [];
 var gLetters = [];
+
+
+function init(){
+    getImgs();
+    showList();
+}
+
 
 
 function getImgs() {
@@ -26,6 +32,7 @@ function getImgs() {
         gImgs.push(getImg(pic, idx, keys));
     });
     renderImgs(gImgs);
+    
 }
 
 function keyCount() {
@@ -36,7 +43,7 @@ function keyCount() {
         keys.forEach(function (key) {
             // if (!gKeyApper[key] ) gKeyAppear[key] = 1;
             // else... 
-            if (gKeyAppear[key] === undefined){
+            if (gKeyAppear[key] === undefined) {
                 gKeyAppear[key] = 1;
             } else {
                 gKeyAppear[key] += 1;
@@ -122,7 +129,7 @@ function addImg() {
 //     document.querySelector('.img-key').value = '';
 // }
 
-showList();
+
 function showList() {
     // cleanBoard();
     sortKeys();
@@ -139,18 +146,20 @@ function showList() {
 }
 
 function goToPics(elKey) {
-    console.log(elKey.innerHTML)
     var arr = [];
 
-    gImgs.forEach(function (img) {
-        img.keywords.forEach(function (key) {
-            if (key === elKey.innerText)
-                arr.push(img);
-        });
-    });
-    cleanBoard();
+    for (var i = 0; i < gImgs.length; i++) {
+        for (var j = 0; j < gImgs[i].keywords.length; j++) {
+            if (gImgs[i].keywords[j] === elKey.innerText) {
+                // console.log(key,elKey.innerText)
+                arr.push(gImgs[i]);
+            }
+        }
+    }
+   
+    console.log(arr)
     renderImgs(arr);
-    console.log('arr', arr)
+   
 }
 
 function sortKeys() {
@@ -170,21 +179,22 @@ function sortKeys() {
 var gCount = 0;
 var arrOfIdxs = [];
 var arrOfKeyWords = [];
-function myFunction() {
 
-    
+function search() {
+
+
     var letters = [];
     var imgs = [];
     var str = document.querySelector('.img-key').value;
-    if(!str) location.reload();
+    if (!str) location.reload();
     gLetters = str.split('');
-   
+
 
     if (!gCount) {
         gImgs.forEach(function (img, idx) {
             img.keywords.forEach(function (key) {
                 var letters = key.split('');
-                if (str === letters[0] && !arrOfIdxs.includes(idx) ) {
+                if (str === letters[0] && !arrOfIdxs.includes(idx)) {
 
                     arrOfIdxs.push(idx);
                     arrOfKeyWords.push(key);
@@ -212,7 +222,7 @@ function myFunction() {
             if (index !== '') {
                 // var x = arrOfIdxs[index];
                 imgs.push(gImgs[index])
-                console.log('imgs',imgs)
+                console.log('imgs', imgs)
                 renderImgs(imgs);
             }
         })
@@ -227,7 +237,7 @@ function myFunction() {
         //         }
         //     }
         // }
-       // for (var k = 0; k < arr.length; k++) {
+        // for (var k = 0; k < arr.length; k++) {
         //     var x = arr[k];
         //     imgs.push(gImgs[x])
         //     renderImgs(imgs);
@@ -246,10 +256,36 @@ function myFunction() {
         //         renderImgs(imgs);
         //     }
         // }
-       
+
     }
 
 }
+
+var menuOpen = false;
+function toggleMenu() {
+    menuOpen = !menuOpen
+    if (menuOpen) {
+        openMenu();
+    } else {
+        closeMenu();
+    }
+}
+
+function closeMenu() {
+    menuOpen = false;
+    document.querySelector('.mobile-menu').style.transform = 'scaleX(0)';
+}
+
+function openMenu() {
+    menuOpen = true;
+    document.querySelector('.mobile-menu').style.transform = 'scaleX(1)';
+}
+
+
+
+
+
+
 
 
 

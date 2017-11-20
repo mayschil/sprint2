@@ -11,20 +11,16 @@
     <link rel="stylesheet" href="css/styleImport.css">
 </head>
 
-<body>
+<body onload="init()">
     <div class="header">
         <div class="container nav-bar" id="top">
-            <!-- <div class="nav-phone"> -->
-                <label for="phone-menu" class="mobile-icon">&#9776;</label>
-                <input type="checkbox" id="phone-menu">
-                <!-- <div class="logo">
-                    <img src="img/slice-7.png">
-                </div> -->
-            <!-- </div> -->
+            <label for="phone-menu" class="mobile-icon">&#9776;</label>
+            <input type="checkbox" id="phone-menu" onclick="toggleMenu()">
+
             <div class="mobile-menu">
                 <ul>
                     <div class="left-bar">
-                        <li><a href="#protfolio"> PROTFOLIO </a></li>
+                        <li onclick="closeMenu()"><a href="#protfolio"> PROTFOLIO </a></li>
                         <li><a href="#about"> ABOUT </a></li>
                     </div>
 
@@ -63,21 +59,18 @@
 
     <div class="search-bar">
         <div class="container buttons">
-            <div class="search-img-by-key">
-                <button class="btn-add-img" onclick="showImgByKey()">Search By Keyword</button>
-                <input onkeyup="myFunction()" class="img-key" type="text" name="key" placeholder="Insert a key word">
-
-            </div>
-
-            <!-- <div class="search-img-by-list">
-                <button class="btn-add-img" onclick="showList()">Search By List</button>
-            </div> -->
-
             <div class="add-img">
                 <button class="btn-add-img" onclick="addImg()">Upload</button>
                 <input class="img-url" type="file" name="img">
                 <img src="" class="added-pic" style="display:none">
             </div>
+            <div class="search-img-by-key">
+                <button class="btn-add-img" onclick="showImgByKey()">Search By Keyword</button>
+                <input onkeyup="search()" class="img-key" type="text" name="key" placeholder="Insert a key word">
+
+            </div>
+
+
         </div>
     </div>
 
