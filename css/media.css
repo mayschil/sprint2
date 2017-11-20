@@ -77,7 +77,11 @@
 
 @media screen and (max-width:516px) {
     
-        
+        .header{
+            display: flex;
+        }
+      
+
         .img-logo{
             display: none;
             height: 0;
@@ -175,6 +179,29 @@
         height:80px;
     }
 
+}
+
+@media screen and (max-width:365px) {
+
+    .details{
+        width:96%;
+
+    }
+
+    .left-box {
+        width: 92%;
+    }
+
+    .in-touch{
+        height: -webkit-fill-available;
+    }
+
+    .btn-bgn{
+        display: block;
+        background-color: white;
+        margin-top: 10px;
+        margin-left: 397px;   
+    }
 }
 
 

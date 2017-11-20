@@ -38,6 +38,16 @@ margin: 0;
     flex-direction: column;
     justify-content: space-around;
 }
+
+/* @media screen and (max-width:365px) {
+    
+        .details{
+            width:96%;
+        }
+
+} */
+
+
 .illus-name{
     font-size: 30px;
     color:#d7fcf5;

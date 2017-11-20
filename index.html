@@ -18,7 +18,9 @@
             <div class="container nav-bar" id="top">
                 <label for="phone-menu" class="mobile-icon">&#9776;</label>
                 <input type="checkbox" id="phone-menu" onclick="toggleMenu()">
-
+                <div  class="btn-bgn" onclick=" location.reload()" style="display:none">
+                    <img src="img/slice-2.png">
+                </div>
                 <div class="mobile-menu">
                     <ul>
                         <div class="left-bar">
@@ -27,7 +29,7 @@
                         </div>
 
                         <li>
-                            <li   class="img-logo" onclick=" location.reload()"><img class="rec" src="img/slice-7.png"></li>
+                            <li class="img-logo" onclick=" location.reload()"><img class="rec" src="img/slice-7.png"></li>
 
                         </li>
                         <div class="right-bar">
@@ -94,9 +96,9 @@
                         <textarea id="textArea1" onkeyup="updateText(0);"></textarea>
                         <div class="text-controls">
                             <div class="btn-group">
-                                <div class="control" onclick="alignRight(0);"><i class="fa fa-align-right ifafa"></i></div>
-                                <div class="control" style="text-align:center;"><i class="fa fa-align-center ifafa"></i></div>
-                                <div class="control" style="text-align:left;"><i class="fa fa-align-left ifafa"></i></div>
+                                <div class="control" onclick="align_txt('r',0);"><i class="fa fa-align-right ifafa"></i></div>
+                                <div class="control" onclick="align_txt('c',0);" style="text-align:center;"><i class="fa fa-align-center ifafa"></i></div>
+                                <div class="control" onclick="align_txt('l',0);" style="text-align:left;"><i class="fa fa-align-left ifafa"></i></div>
                             </div>
                             <div class="btn-group">
                                 <div class="control" style="text-align:right;" onclick="changeFontSize('top','plus');"><i class="fa fa-plus ifafa"></i></div>
@@ -105,7 +107,7 @@
                             </div>
                             <div class="btn-group">
                                 <div class="control" style="text-align:right;">
-                                    <input class="clrPicker" type="color" id="clrPicker0" value="#ff0000" onchange="updateColor(this)">
+                                    <input class="clrPicker" type="color" id="clrPicker0" value="#000000" onchange="updateColor(this)">
                                 </div>
                                 <div class="control" style="text-align:center;">
                                     <select id="selecth1FontFamily" name="selectFontFamily" onchange="updateFontFamily(this);">
@@ -115,11 +117,12 @@
                         <option> Sans-Serif </option>                                  
                         <option> Tahoma </option>
                         <option> Verdana </option>
-                        <option> Lucida Sans Unicode </option>                               
+                        <option> Lucida Sans Unicode </option>
+                        <option> Impact </option>                               
                     </select>
 
                                 </div>
-                                <div class="control" style="text-align:left;"><i class="fa fa-font ifafa"></i></div>
+                                <div class="control" style="text-align:left;" onclick="toggleShadow(0)"><i class="fa fa-font ifafa"></i></div>
                             </div>
                         </div>
                     </div>
@@ -131,9 +134,9 @@
                         <textarea id="textArea2" onkeyup="updateText(1);"></textarea>
                         <div class="text-controls">
                             <div class="btn-group">
-                                <div class="control" onclick="alignRight(2);"><i class="fa fa-align-right ifafa"></i></div>
-                                <div class="control" style="text-align:center;"><i class="fa fa-align-center ifafa"></i></div>
-                                <div class="control" style="text-align:left;"><i class="fa fa-align-left ifafa"></i></div>
+                                <div class="control" onclick="align_txt('r',1);"><i class="fa fa-align-right ifafa"></i></div>
+                                <div class="control" style="text-align:center;" onclick="align_txt('c',1);"><i class="fa fa-align-center ifafa"></i></div>
+                                <div class="control" style="text-align:left;" onclick="align_txt('l',1);"><i class="fa fa-align-left ifafa"></i></div>
                             </div>
                             <div class="btn-group">
                                 <div class="control" style="text-align:right;" onclick="changeFontSize('bottom','plus');"><i class="fa fa-plus ifafa"></i></div>
@@ -143,7 +146,7 @@
                             <div class="btn-group">
                                 <!-- <div class="control" style="text-align:right;"><i class="fa fa-eyedropper ifafa"></i></div> -->
                                 <div class="control" style="text-align:right;">
-                                    <input class="clrPicker" type="color" id="clrPicker1" value="#ff0000" onchange="updateColor(this)">
+                                    <input class="clrPicker" type="color" id="clrPicker1" value="#000000" onchange="updateColor(this)">
                                 </div>
                                 <div class="control" style="text-align:center;">
                                     <select id="selecth2FontFamily" name="selectFontFamily" onchange="updateFontFamily(this);">
@@ -153,10 +156,11 @@
                         <option> Sans-Serif </option>                                  
                         <option> Tahoma </option>
                         <option> Verdana </option>
-                        <option> Lucida Sans Unicode </option>                               
+                        <option> Lucida Sans Unicode </option>
+                        <option> Impact </option>                                   
                     </select>
                                 </div>
-                                <div class="control" style="text-align:left;"><i class="fa fa-font ifafa"></i></div>
+                                <div class="control" style="text-align:left;" onclick="toggleShadow(1)"><i class="fa fa-font ifafa"></i></div>
                             </div>
                         </div>
 
