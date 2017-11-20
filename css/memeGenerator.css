@@ -1,0 +1,146 @@
+
+.memeGenerator {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row; 
+    width : 90%;
+    /* max-width: 823px; */
+    /* background-color: rgb(240, 154, 154); */
+    background-color: #e0e0e0;
+}
+
+.imgHolder {
+    width: 55%;
+    /* flex-grow: 1;  */
+    padding: 5px;
+    /* background-color: rgb(236, 106, 45); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+
+    /* display: block; */
+}
+
+
+.actionsButtons {
+    /* background-color: rgb(60, 157, 236); */
+    width: 40%;
+    padding: 10px;
+    /* background-color: rgb(231, 240, 221); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    /* marg */
+    /* border: 1px solid red; */
+    /* display: block; */
+}
+@media screen and (max-width:690px) {
+    .imgHolder {
+        width: 90%;
+    }
+
+    .actionsButtons {
+        width: 90%;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+canvas {
+    border:1px rgb(17, 13, 13) solid;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.actionsButtons > div {
+    margin: 7px;
+}
+
+
+#selecth1FontFamily{
+    width: 100%px;
+    
+}
+.controls {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px yellow solid; */
+    width: 100%;
+    /* height: 65px; */
+}
+.control{ 
+    /* width: 30%; */
+    /* height: 30px; */
+    border: 1px #454545;
+    text-align: right;
+}
+.btn-container {
+    display: flex;
+    width: 100%;
+}
+.btn-group {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+.text-controls {
+    width:100%;
+    /* border: 1px blue solid; */
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    text-align: center;
+    
+    width: 100%;
+    /* flex-wrap: nowrap; */
+}
+.ifafa {
+    font-size:24px;
+}
+.btn {
+    background-color: #2eb398; /* Green */
+    
+    width: 100%;
+    height: 30px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    /* margin: 4px 2px; */
+    cursor: pointer;
+}
+
+.btn-back {
+    /* padding: 10px 24px; */
+}
+
+@media screen and (max-width: 690px) {
+  .memeGenerator{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+select{
+    font-size: 10px;
+    width: 50px;
+}
+
+.clrPicker{
+    width: 100%;
+    margin: 0 auto;
+}
+

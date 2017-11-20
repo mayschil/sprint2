@@ -14,7 +14,7 @@ var gKeySorted = [];
 keyCount();
 var keys = [];
 var gLetters = [];
-
+var gMenuOpen = false;
 
 function init(){
     getImgs();
@@ -68,7 +68,10 @@ function renderImgs(imgs) {
 
     imgs.forEach(function (img, idx) {
         var strHtml = `
-        <div class="img-size"><img  src="img/${img.url}" onclick="makeMeme(this)" ></div>
+        <div class="img-size"> <a href="#memeGenerator">
+        <img  id="i-${idx}" src="img/${img.url}" onclick="makeMeme(this)" >
+        </a>
+        </div>
         `
         strHtmls += strHtml
     });
@@ -76,15 +79,15 @@ function renderImgs(imgs) {
 
 }
 
-function cleanBoard() {
+// function cleanBoard() {
 
-    document.querySelector('.display-keys').style.height = 'initial';
-    document.querySelector('.display-keys').style.margin = '0';
-    document.querySelector('.display-keys').innerHTML = '';
-    // var img = document.querySelector('.added-pic');
-    // img.style.display = 'none';
-    // renderImgs(gImgs);
-}
+//     document.querySelector('.display-keys').style.height = 'initial';
+//     document.querySelector('.display-keys').style.margin = '0';
+//     document.querySelector('.display-keys').innerHTML = '';
+//     // var img = document.querySelector('.added-pic');
+//     // img.style.display = 'none';
+//     // renderImgs(gImgs);
+// }
 
 function addImg() {
 
@@ -109,27 +112,6 @@ function addImg() {
 
 }
 
-
-
-// function showImgByKey() {
-
-//     cleanBoard();
-//     var isImgs = [];
-
-//     var keyValue = document.querySelector('.img-key').value;
-
-//     gImgs.forEach(function (img) {
-//         img.keywords.forEach(function (key) {
-//             if (keyValue === key)
-//                 isImgs.push(img);
-//         });
-//     });
-
-//     renderImgs(isImgs);
-//     document.querySelector('.img-key').value = '';
-// }
-
-
 function showList() {
     // cleanBoard();
     sortKeys();
@@ -146,6 +128,8 @@ function showList() {
 }
 
 function goToPics(elKey) {
+    document.querySelector('.memeGenerator').style.display='none';
+    console.log('elKey',elKey)
     var arr = [];
 
     for (var i = 0; i < gImgs.length; i++) {
@@ -182,7 +166,7 @@ var arrOfKeyWords = [];
 
 function search() {
 
-
+    document.querySelector('.memeGenerator').style.display='none';
     var letters = [];
     var imgs = [];
     var str = document.querySelector('.img-key').value;
@@ -261,10 +245,10 @@ function search() {
 
 }
 
-var menuOpen = false;
+
 function toggleMenu() {
-    menuOpen = !menuOpen
-    if (menuOpen) {
+    gMenuOpen = !gMenuOpen
+    if (gMenuOpen) {
         openMenu();
     } else {
         closeMenu();
@@ -272,12 +256,12 @@ function toggleMenu() {
 }
 
 function closeMenu() {
-    menuOpen = false;
+    gMenuOpen = false;
     document.querySelector('.mobile-menu').style.transform = 'scaleX(0)';
 }
 
 function openMenu() {
-    menuOpen = true;
+    gMenuOpen = true;
     document.querySelector('.mobile-menu').style.transform = 'scaleX(1)';
 }
 

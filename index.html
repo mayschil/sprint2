@@ -7,37 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="css/styleImport.css">
 </head>
 
 <body onload="init()">
-    <div class="header">
-        <div class="container nav-bar" id="top">
-            <label for="phone-menu" class="mobile-icon">&#9776;</label>
-            <input type="checkbox" id="phone-menu" onclick="toggleMenu()">
+    <div id="mainPage">
+        <div class="header">
+            <div class="container nav-bar" id="top">
+                <label for="phone-menu" class="mobile-icon">&#9776;</label>
+                <input type="checkbox" id="phone-menu" onclick="toggleMenu()">
 
-            <div class="mobile-menu">
-                <ul>
-                    <div class="left-bar">
-                        <li onclick="closeMenu()"><a href="#protfolio"> PROTFOLIO </a></li>
-                        <li><a href="#about"> ABOUT </a></li>
-                    </div>
+                <div class="mobile-menu">
+                    <ul>
+                        <div class="left-bar">
+                            <li onclick="closeMenu()"><a href="#protfolio"> PROTFOLIO </a></li>
+                            <li onclick="closeMenu()"><a href="#about"> ABOUT </a></li>
+                        </div>
 
-                    <li>
-                        <li onclick=" location.reload()"><img class="rec" src="img/slice-7.png"></li>
+                        <li>
+                            <li   class="img-logo" onclick=" location.reload()"><img class="rec" src="img/slice-7.png"></li>
 
-                    </li>
-                    <div class="right-bar">
-                        <li><a href="#blog"> BLOG </a></li>
-                        <li><a href="#get-in-touch"> GET IN TOUCH </a></li>
-                    </div>
-            </div>
-            </ul>
+                        </li>
+                        <div class="right-bar">
+                            <li onclick="closeMenu()"><a href="#blog"> BLOG </a></li>
+                            <li onclick="closeMenu()"><a href="#get-in-touch"> GET IN TOUCH </a></li>
+                        </div>
+                </div>
+                </ul>
 
 
 
-            <!-- <ul>
+                <!-- <ul>
                 <div class="left-bar">
                     <li><a href="#protfolio"> PROTFOLIO </a></li>
                     <li><a href="#about"> ABOUT </a></li>
@@ -54,135 +56,232 @@
 
 
             </ul> -->
-        </div>
-    </div>
-
-    <div class="search-bar">
-        <div class="container buttons">
-            <div class="add-img">
-                <button class="btn-add-img" onclick="addImg()">Upload</button>
-                <input class="img-url" type="file" name="img">
-                <img src="" class="added-pic" style="display:none">
             </div>
-            <div class="search-img-by-key">
-                <button class="btn-add-img" onclick="showImgByKey()">Search By Keyword</button>
-                <input onkeyup="search()" class="img-key" type="text" name="key" placeholder="Insert a key word">
-
-            </div>
-
-
         </div>
-    </div>
 
-    <div class="container pictures">
-        <div class="display-keys"></div>
-        <div class="container imgs">
-
-        </div>
-    </div>
-
-    <div class="about-div">
-        <div class="container about" id="about">
-            <!-- <div class="about-frame"> -->
-            <p class="about-headline">About Us</p>
-            <p class="about-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique, enim magna
-                pretium augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie fringilla, elit odio
-                rhoncus turpis , ac dictum libero elit vel metus. Morbi egestas sit amet velit eget venenatis. Mauris porttitor,
-                nibh at sagittis tristique, enim magna pretium augue, eget consectetur sem dui non urna
-            </p>
-            <button class="go-top1"><a href="#top"> Go Up </a></button>
-            <!-- </div> -->
-
-        </div>
-    </div>
-
-
-    <div class="illus-prof">
-        <div class="container profile" id="protfolio">
-            <!-- <div class="profile-box"> -->
-            <img class="illus-pic" src="img/image.png">
-            <div class="details">
-                <div class="headline">
-                    <p class="illus-name">Smith Anderson</p>
-                    <p class="illus-job">Illustrator and Character Design</p>
+        <div class="search-bar">
+            <div class="container buttons">
+                <div class="add-img">
+                    <button class="btn-add-img" onclick="addImg()">Upload</button>
+                    <input class="img-url" type="file" name="img">
+                    <img src="" class="added-pic" style="display:none">
                 </div>
-                <p class="about-illus">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique, enim
+                <div class="search-img-by-key">
+                    <button class="btn-add-img" onclick="showImgByKey()">Search By Keyword</button>
+                    <input onkeyup="search()" class="img-key" type="text" name="key" placeholder="Insert a key word">
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="container pictures">
+            <div class="display-keys"></div>
+            <div class="memeGenerator" id="memeGenerator" style="display:none">
+                <div class="imgHolder">
+                    <canvas id="canvas">
+                        Sorry, no canvas available
+                    </canvas>
+                </div>
+
+                <div class="actionsButtons">
+                    <div class="btn-container">
+                        <button class="btn" onclick="BackToList();">Back To List</button>
+                    </div>
+                    <!-- controls begin-->
+                    <div class="controls">
+                        <textarea id="textArea1" onkeyup="updateText(0);"></textarea>
+                        <div class="text-controls">
+                            <div class="btn-group">
+                                <div class="control" onclick="alignRight(0);"><i class="fa fa-align-right ifafa"></i></div>
+                                <div class="control" style="text-align:center;"><i class="fa fa-align-center ifafa"></i></div>
+                                <div class="control" style="text-align:left;"><i class="fa fa-align-left ifafa"></i></div>
+                            </div>
+                            <div class="btn-group">
+                                <div class="control" style="text-align:right;" onclick="changeFontSize('top','plus');"><i class="fa fa-plus ifafa"></i></div>
+                                <div class="control" style="text-align:center;" onclick="changeFontSize('top','minus');"><i class="fa fa-minus ifafa"></i></div>
+                                <!-- <div class="control" style="text-align:left;"><i class="fa fa-align-right ifafa"></i></div> -->
+                            </div>
+                            <div class="btn-group">
+                                <div class="control" style="text-align:right;">
+                                    <input class="clrPicker" type="color" id="clrPicker0" value="#ff0000" onchange="updateColor(this)">
+                                </div>
+                                <div class="control" style="text-align:center;">
+                                    <select id="selecth1FontFamily" name="selectFontFamily" onchange="updateFontFamily(this);">
+                        <option selected="selected"> Segoe UI </option>    
+                        <option> Serif </option>
+                        <option> Arial </option>
+                        <option> Sans-Serif </option>                                  
+                        <option> Tahoma </option>
+                        <option> Verdana </option>
+                        <option> Lucida Sans Unicode </option>                               
+                    </select>
+
+                                </div>
+                                <div class="control" style="text-align:left;"><i class="fa fa-font ifafa"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- controls section 1 ends-->
+
+                    <!-- controls begin-->
+                    <div class="controls">
+
+                        <textarea id="textArea2" onkeyup="updateText(1);"></textarea>
+                        <div class="text-controls">
+                            <div class="btn-group">
+                                <div class="control" onclick="alignRight(2);"><i class="fa fa-align-right ifafa"></i></div>
+                                <div class="control" style="text-align:center;"><i class="fa fa-align-center ifafa"></i></div>
+                                <div class="control" style="text-align:left;"><i class="fa fa-align-left ifafa"></i></div>
+                            </div>
+                            <div class="btn-group">
+                                <div class="control" style="text-align:right;" onclick="changeFontSize('bottom','plus');"><i class="fa fa-plus ifafa"></i></div>
+                                <div class="control" style="text-align:center;" onclick="changeFontSize('bottom','minus');"><i class="fa fa-minus ifafa"></i></div>
+                                <!-- <div class="control" style="text-align:left;"><i class="fa fa-align-right ifafa"></i></div> -->
+                            </div>
+                            <div class="btn-group">
+                                <!-- <div class="control" style="text-align:right;"><i class="fa fa-eyedropper ifafa"></i></div> -->
+                                <div class="control" style="text-align:right;">
+                                    <input class="clrPicker" type="color" id="clrPicker1" value="#ff0000" onchange="updateColor(this)">
+                                </div>
+                                <div class="control" style="text-align:center;">
+                                    <select id="selecth2FontFamily" name="selectFontFamily" onchange="updateFontFamily(this);">
+                        <option selected="selected"> Segoe UI </option>    
+                        <option> Serif </option>
+                        <option> Arial </option>
+                        <option> Sans-Serif </option>                                  
+                        <option> Tahoma </option>
+                        <option> Verdana </option>
+                        <option> Lucida Sans Unicode </option>                               
+                    </select>
+                                </div>
+                                <div class="control" style="text-align:left;"><i class="fa fa-font ifafa"></i></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- controls section 2 ends-->
+
+
+                    <div class="btn-container">
+                        <a class="btn" href="#" id="download" onclick="saveImg(this)">Save</a>
+                    </div>
+
+                </div>
+                <!-- actionsButtons ends-->
+            </div>
+            <div class="container imgs">
+            </div>
+        </div>
+
+        <div class="about-div">
+            <div class="container about" id="about">
+                <!-- <div class="about-frame"> -->
+                <p class="about-headline">About Us</p>
+                <p class="about-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique, enim
                     magna pretium augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie fringilla,
                     elit odio rhoncus turpis , ac dictum libero elit vel metus. Morbi egestas sit amet velit eget venenatis.
                     Mauris porttitor, nibh at sagittis tristique, enim magna pretium augue, eget consectetur sem dui non
                     urna
                 </p>
-                <div class="social">
-                    <img src="img/dribbble.png">
-                    <img src="img/facebook.png">
-                    <img src="img/linkedin.png">
-                    <img src="img/pinterest.png">
-                    <img src="img/twitter.png">
-                    <img src="img/google.png">
-                </div>
-                <button class="go-top2"><a href="#top"> Go Up </a></button>
-            </div>
-            <!-- </div> -->
+                <button class="go-top1"><a href="#top"> Go Up </a></button>
+                <!-- </div> -->
 
-        </div>
-    </div>
-
-    <div class="intouch">
-        <div class="container in-touch" id="get-in-touch">
-            <div class="left-box">
-                <div calss="headline-touch">
-                    <p class="get-touch-head">Get In Touch</p>
-                    <p class="get-touch-guide">In order to get in touch use the contact form below:</p>
-                </div>
-                <div class="client-details">
-                    <label for="text-name"></label>
-                    <input class="text" type="text" id="text-name" name="n" placeholder="Name (Required)">
-                    <label for="text-mail"></label>
-                    <input class="text" type="text" id="text-mail" name="e" placeholder="Email (Required)">
-                    <label for="text-subject"></label>
-                    <input class="text" type="text" id="text-subject" name="s" placeholder="Subject">
-                    <label for="text-msg"></label>
-                    <input class="msg" type="text" id="text-msg" name="w" placeholder="Write your message here...">
-                    <button class="btn-send">SEND</button>
-                    <!-- <button class="go-top3"><a href="#top"> Go Up </a></button> -->
-                </div>
             </div>
-            <div class="right-box">
-                <div class="words">
-                    <p> Quisque Hendrerit: purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin
-                        sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.</p>
-                </div>
-                <div class="communication">
-                    <div class="address">
-                        <div class="loc">
-                            <img src="img/location.png">
-                        </div>
-                        Elm St. 14/05 Lost City
-                    </div>
-                    <div class="phone-num">
-                        <div class="down">
-                            <img src="img/downloads.png">
-                        </div>
-                        +11111111111
-                    </div>
-                    <div class="email">
-                        <div class="mail">
-                            <img src="img/mail.png">
-                        </div>
-                        info@gmail.com
-                    </div>
-                </div>
-            </div class="contact">
         </div>
 
-    </div>
-    <!-- <div class="foot"> -->
-    <div class=" footer">
-        <p class="copy">© Copyright 2013 by PSDchat</p>
-    </div>
+
+        <div class="illus-prof">
+            <div class="container profile" id="protfolio">
+                <!-- <div class="profile-box"> -->
+                <img class="illus-pic" src="img/image.png">
+                <div class="details">
+                    <div class="headline">
+                        <p class="illus-name">Smith Anderson</p>
+                        <p class="illus-job">Illustrator and Character Design</p>
+                    </div>
+                    <p class="about-illus">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique,
+                        enim magna pretium augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie
+                        fringilla, elit odio rhoncus turpis , ac dictum libero elit vel metus. Morbi egestas sit amet velit
+                        eget venenatis. Mauris porttitor, nibh at sagittis tristique, enim magna pretium augue, eget consectetur
+                        sem dui non urna
+                    </p>
+                    <div class="social">
+                        <img src="img/dribbble.png">
+                        <img src="img/facebook.png">
+                        <img src="img/linkedin.png">
+                        <img src="img/pinterest.png">
+                        <img src="img/twitter.png">
+                        <img src="img/google.png">
+                    </div>
+                    <button class="go-top2"><a href="#top"> Go Up </a></button>
+                </div>
+                <!-- </div> -->
+
+            </div>
+        </div>
+
+        <div class="intouch">
+            <div class="container in-touch" id="get-in-touch">
+                <div class="left-box">
+                    <div calss="headline-touch">
+                        <p class="get-touch-head">Get In Touch</p>
+                        <p class="get-touch-guide">In order to get in touch use the contact form below:</p>
+                    </div>
+                    <div class="client-details">
+                        <label for="text-name"></label>
+                        <input class="text" type="text" id="text-name" name="n" placeholder="Name (Required)">
+                        <label for="text-mail"></label>
+                        <input class="text" type="text" id="text-mail" name="e" placeholder="Email (Required)">
+                        <label for="text-subject"></label>
+                        <input class="text" type="text" id="text-subject" name="s" placeholder="Subject">
+                        <label for="text-msg"></label>
+                        <input class="msg" type="text" id="text-msg" name="w" placeholder="Write your message here...">
+                        <button class="btn-send">SEND</button>
+                        <!-- <button class="go-top3"><a href="#top"> Go Up </a></button> -->
+                    </div>
+                </div>
+                <div class="right-box">
+                    <div class="words">
+                        <p> Quisque Hendrerit: purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin
+                            sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.</p>
+                    </div>
+                    <div class="communication">
+                        <div class="address">
+                            <div class="loc">
+                                <img src="img/location.png">
+                            </div>
+                            Elm St. 14/05 Lost City
+                        </div>
+                        <div class="phone-num">
+                            <div class="down">
+                                <img src="img/downloads.png">
+                            </div>
+                            +11111111111
+                        </div>
+                        <div class="email">
+                            <div class="mail">
+                                <img src="img/mail.png">
+                            </div>
+                            info@gmail.com
+                        </div>
+                    </div>
+                </div class="contact">
+            </div>
+
+        </div>
+        <!-- <div class="foot"> -->
+        <div class=" footer">
+            <p class="copy">© Copyright 2013 by PSDchat</p>
+        </div>
     </div>
     <!-- </div> -->
+    </div>
+    <!-- memeGenerator ends-->
     <script src="js/main.js"></script>
+    <script src="js/memegeneratorr.js"></script>
 </body>
 
 </html>
